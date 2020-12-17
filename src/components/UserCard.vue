@@ -1,30 +1,30 @@
 <template>
     <div class="user-card">
-        <img src="../assets/70.jpg" class="user-photo">
-        <p class="user-nickname">romashka</p>
+        <img v-bind:src="sourse" class="user-photo">
+        <p class="user-nickname">{{ nickname }}</p>
         <p class="user-name">
-                Иванов Иван<br>
-                Иванович
+            {{ name }}
         </p>
         <hr>
         <p class="user-info-item">
             <img src="../assets/location.png">
-            Москва, Юбилейная 50
+            {{ adress }}
         </p>
         <p class="user-info-item">
             <img src="../assets/mail.png">
-            coldrabbit48@example.com
+            {{ email }}
         </p>
         <p class="user-info-item">
             <img src="../assets/phone.png">
-            +7-495-266-57-34
+            {{ number }}
         </p>
     </div>
 </template>
 
 <script>
 export default{
-    name: "UserCard"
+    name: "UserCard",
+    props: ['sourse', 'nickname', 'name', 'adress', 'email', 'number']
 }
 </script>
 
