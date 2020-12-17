@@ -1,6 +1,6 @@
 <template>
     <div class="user-card">
-        <img src="./assets/70.jpg" class="user-photo">
+        <img src="../assets/70.jpg" class="user-photo">
         <p class="user-nickname">romashka</p>
         <p class="user-name">
                 Иванов Иван<br>
@@ -8,21 +8,25 @@
         </p>
         <hr>
         <p class="user-info-item">
-            <img src="./assets/location.png">
+            <img src="../assets/location.png">
             Москва, Юбилейная 50
         </p>
         <p class="user-info-item">
-            <img src="./assets/mail.png">
+            <img src="../assets/mail.png">
             coldrabbit48@example.com
         </p>
         <p class="user-info-item">
-            <img src="./assets/phone.png">
+            <img src="../assets/phone.png">
             +7-495-266-57-34
         </p>
     </div>
 </template>
 
-<script></script>
+<script>
+export default{
+    name: "UserCard"
+}
+</script>
 
 <style>
     .user-card {
