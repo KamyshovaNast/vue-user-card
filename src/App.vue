@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <UserCard v-bind:sourse="sourse" v-bind:nickname="nickname" v-bind:name="name" v-bind:adress="adress" v-bind:email="email" v-bind:number="number"/>
+    <UserCard v-bind:userCard="userCard"/>
+    <button v-on:click="getUserData()">Обновить</button>
   </div>
 </template>
 
@@ -13,12 +14,19 @@ export default {
     UserCard
   },
   data() {
-        return {sourse: '../assets/70.jpg',
-        nickname: 'romashka',
-        name: 'Иванов Иван Иванович',
-        adress: 'Москва, Юбилейная 50',
-        email: 'coldrabbit48@example.com',
-        number: '+7-495-266-57-34'}
+        return {
+            userCard: {}
+        }
+  },
+  methods: {
+    getUserData() {
+        this.axios
+        .get("http://37.77.104.246/users/getrandom.php")
+        .then((response) => {this.userCard = response.data})
+    }
+  },
+  mounted() {
+    this.getUserData();
   }
 }
 </script>

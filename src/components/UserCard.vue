@@ -1,22 +1,21 @@
 <template>
     <div class="user-card">
-        <img v-bind:src="sourse" class="user-photo">
-        <p class="user-nickname">{{ nickname }}</p>
+        <img v-bind:src="userCard.img" class="user-photo">
         <p class="user-name">
-            {{ name }}
+            {{userCard.firstName}} {{userCard.lastName}}
         </p>
         <hr>
         <p class="user-info-item">
             <img src="../assets/location.png">
-            {{ adress }}
+            {{userCard.country}}, {{userCard.city}}, {{userCard.street}}, {{userCard.houseNumber}}
         </p>
         <p class="user-info-item">
             <img src="../assets/mail.png">
-            {{ email }}
+            {{userCard.email}}
         </p>
         <p class="user-info-item">
             <img src="../assets/phone.png">
-            {{ number }}
+            {{userCard.phone}}
         </p>
     </div>
 </template>
@@ -24,7 +23,7 @@
 <script>
 export default{
     name: "UserCard",
-    props: ['sourse', 'nickname', 'name', 'adress', 'email', 'number']
+    props: ['userCard']
 }
 </script>
 
